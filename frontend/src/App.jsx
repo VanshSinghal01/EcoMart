@@ -111,7 +111,7 @@ function Dashboard() {
     setOtp("")
   }
   useEffect(() => {
-    fetch('http://localhost:3000/get')
+    fetch('https://ecomartbackend.onrender.com/get')
       .then(response => response.json())
       .then(data => setData(data))
   }, [])
@@ -139,7 +139,7 @@ function Dashboard() {
   };
 const handleContinue = async () => {
   try {
-    const response = await fetch('http://localhost:3000/signup', {
+    const response = await fetch('https://ecomartbackend.onrender.com/signup', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ Email }),
@@ -160,7 +160,7 @@ const handleContinue = async () => {
 
   const submit = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/verifyotp", {
+      const response = await axios.post("https://ecomartbackend.onrender.com/verifyotp", {
         Email,
         otp,
       });
